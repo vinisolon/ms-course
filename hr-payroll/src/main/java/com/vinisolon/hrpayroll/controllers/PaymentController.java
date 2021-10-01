@@ -1,5 +1,6 @@
 package com.vinisolon.hrpayroll.controllers;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.vinisolon.hrpayroll.entities.Payment;
 import com.vinisolon.hrpayroll.services.PaymentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,9 +17,15 @@ public class PaymentController {
     @Autowired
     private PaymentService service;
 
+    @HystrixCommand(fallbackMethod = "getPaymentAlternative")
     @GetMapping(value = "/{workerId}/days/{days}")
     public ResponseEntity<Payment> getPayment(@PathVariable Long workerId, @PathVariable Integer days) {
         Payment obj = service.getPayment(workerId, days);
+        return ResponseEntity.ok(obj);
+    }
+
+    public ResponseEntity<Payment> getPaymentAlternative(Long workerId, Integer days) {
+        Payment obj = new Payment("AlternativeMethod", 100.0, days);
         return ResponseEntity.ok(obj);
     }
 
