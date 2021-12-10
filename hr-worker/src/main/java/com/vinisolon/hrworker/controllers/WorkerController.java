@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RefreshScope // Anotação do actuator
+@RefreshScope // Anotação do actuator para atualizar configuração em tempo de execução
 @RestController
 @RequestMapping(value = "/workers")
 public class WorkerController {
