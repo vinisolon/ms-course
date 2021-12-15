@@ -14,14 +14,14 @@ public class HrConfigServerApplication implements CommandLineRunner {
 		SpringApplication.run(HrConfigServerApplication.class, args);
 	}
 
-	@Value("${spring.cloud.config.server.git.username}")
-	private String gitUsername;
-	@Value("${spring.cloud.config.server.git.password}")
+//	@Value("${spring.cloud.config.server.git.username}")
+//	private String gitUsername;
+	@Value("${spring.cloud.config.server.git.passphrase}")
 	private String gitPassword;
 
 	@Override
 	public void run(String... args) throws Exception {
-		System.out.println("GIT USERNAME: " + gitUsername);
-		System.out.println("GIT PASSWORD: " + gitPassword);
+//		System.out.println("GIT USERNAME: " + gitUsername);
+		System.out.println("GIT PASSPHRASE: " + gitPassword);
 	}
 }
