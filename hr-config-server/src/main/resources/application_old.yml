@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: hr-config-server
+  server:
+    port: 8888
+  cloud:
+    config:
+      server:
+        git:
+          uri: git@github.com:vinisolon/ms-course-configs.git
+            username: ${GIT_USER}
+              passphrase: ${GIT_PASS}
+                ignoreLocalSshSettings: true
+                  private-key: ${PRIVATE_KEY}
