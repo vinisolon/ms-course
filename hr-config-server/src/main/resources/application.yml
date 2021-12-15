@@ -8,7 +8,5 @@ spring:
       server:
         git:
           uri: git@github.com:vinisolon/ms-course-configs.git
-            username: ${GIT_USER}
-              passphrase: ${GIT_PASS}
-                ignoreLocalSshSettings: true
-                  private-key: ${PRIVATE_KEY}
+#          ignore-local-ssh-settings: true
+          private-key-file: C:\Users\vinicius.araujo\.ssh\id_rsa
