@@ -8,5 +8,6 @@ spring:
     config:
       server:
         git:
-          uri: git@github.com:vinisolon/ms-course-configs.git
-          private-key-file: C:\Users\vinicius.araujo\.ssh\id_rsa
+          uri: https://github.com/vinisolon/ms-course-configs.git
+          user: ${GIT_USER}
+          password: ${GIT_PASS}
