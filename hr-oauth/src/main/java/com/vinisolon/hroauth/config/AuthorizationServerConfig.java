@@ -41,6 +41,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
                 .withClient("ms-course")
                 .secret(passwordEncoder.encode("ms-course-secret"))
                 .scopes("read", "write")
+                .autoApprove(true)
                 .authorizedGrantTypes("password")
                 .accessTokenValiditySeconds(86400);
     }
