@@ -24,7 +24,6 @@ public class UserController {
             return ResponseEntity.ok().body(user);
         } catch (IllegalArgumentException e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-            // fix
         }
     }
 
